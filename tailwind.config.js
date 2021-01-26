@@ -8,17 +8,24 @@ module.exports = {
   darkMode: false,
   theme: {
     extend: {
+      fontFamily: {
+        wsans: ['Quicksand', 'sans-serif'],
+      },
       colors: {
         theme: {
           primary: '#1c263d',
           secondary: '#273146',
-          contrast: '#5868f0'
+          contrast: '#5868f0',
+          hover: '#495163'
         }
       }
     }
   },
+  plugins: [
+    require('tailwind-scrollbar'),
+  ],
   variants: {
     extend: {},
+    scrollbar: ['rounded'],
   },
-  plugins: [],
 }

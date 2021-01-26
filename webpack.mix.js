@@ -14,21 +14,22 @@ const mix = require('laravel-mix');
 mix.js('resources/js/app.js', 'public/js')
   .postCss('resources/css/app.css', 'public/css', [
     require('tailwindcss')
-  ]);
+  ])
+  .sass('resources/scss/fa-app.scss', 'public/css')
 
-// mix.browserSync({
-//   host: '127.0.0.1',
-//   proxy: 'localhost',
-//   open: false,
-//   files: [
-//     'app/**/*.php',
-//     'resources/views/**/*.php',
-//     'packages/mixdinternet/frontend/src/**/*.php',
-//     'public/js/**/*.js',
-//     'public/css/**/*.css'
-//   ],
-//   watchOptions: {
-//     usePolling: true,
-//     interval: 500
-//   }
-// });
+mix.browserSync({
+  host: '127.0.0.1',
+  proxy: 'localhost',
+  open: false,
+  files: [
+    'app/**/*.php',
+    'resources/views/**/*.php',
+    'packages/mixdinternet/frontend/src/**/*.php',
+    'public/js/**/*.js',
+    'public/css/**/*.css'
+  ],
+  watchOptions: {
+    usePolling: true,
+    interval: 500
+  }
+});
