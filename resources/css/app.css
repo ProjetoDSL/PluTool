@@ -1,3 +1,8 @@
 @tailwind base;
+@layer base {
+  button {
+    @apply rounded-none;
+  }
+}
 @tailwind components;
 @tailwind utilities;

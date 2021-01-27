@@ -9,7 +9,7 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        wsans: ['Quicksand', 'sans-serif'],
+        qsand: ['Quicksand', 'sans-serif'],
       },
       colors: {
         theme: {
