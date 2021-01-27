@@ -15,7 +15,7 @@ mix.js('resources/js/app.js', 'public/js')
   .postCss('resources/css/app.css', 'public/css', [
     require('tailwindcss')
   ])
-  .sass('resources/scss/fa-app.scss', 'public/css')
+  .sass('resources/scss/fa.scss', 'public/css')
 
 mix.browserSync({
   host: '127.0.0.1',
