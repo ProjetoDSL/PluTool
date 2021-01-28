@@ -26,6 +26,5 @@ module.exports = {
   ],
   variants: {
     extend: {},
-    scrollbar: ['rounded'],
   },
 }
