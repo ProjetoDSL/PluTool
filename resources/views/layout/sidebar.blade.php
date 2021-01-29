@@ -3,7 +3,7 @@
     <div class="sidebarActivityExpand flex items-center h-12 w-full cursor-pointer transition duration-200 ease-in-out hover:bg-theme-hover">
       <div class="flex-none w-16">
         <p class="text-right mr-4">
-          <i class="fas fa-{{$icons[$phase]}}"></i>
+          <i class="fas fa-{{$sidebarIcons[$phase]}}"></i>
         </p>
       </div>
       <div class="sm:hidden lg:flex flex-auto">
