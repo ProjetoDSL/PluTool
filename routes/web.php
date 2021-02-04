@@ -15,6 +15,7 @@ use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\PhaseController;
 use App\Http\Controllers\TaskController;
+use App\Http\Controllers\RequirementController;
 
 Route::get('/', function () {
     return view('layout.app');
@@ -23,6 +24,8 @@ Route::get('/', function () {
 Route::get('/{phase}', [PhaseController::class, 'show']);
 
 Route::get('/{phase}/{task}', [TaskController::class, 'show']);
+
+Route::get('/{phase}/elicitateView/{id}', [RequirementController::class, 'show']);
 // function ($phase, $task) {
 
 //   // $_task = strtoupper(str_replace("-", ".", $task));

@@ -16,75 +16,37 @@
           </tr>
         </thead>
         <tbody>
+          @foreach ($requirements as $req)
           <tr class="h-12">
-            <td class="border border-theme-contrast text-center"><p>12</p></td>
-            <td class="border border-theme-contrast pl-5">This is the description</td>
+            <td class="border border-theme-contrast text-center"><p>{{$req['id']}}</p></td>
+            <td class="border border-theme-contrast pl-5">{{$req['description']}}</td>
             <td class="border border-theme-contrast">
               <div class="flex flex-row">
-                <button class="flex flex-auto">
-                  <p class="text-center w-full">
-                    <i class="fas fa-pencil-alt"></i>
-                  </p>
-                </button>
-                <button class="flex flex-auto">
-                  <p class="text-center w-full">
-                    <i class="fas fa-eye"></i>
-                  </p>
-                </button>
-                <button class="flex flex-auto">
-                  <p class="text-center w-full">
-                    <i class="fas fa-times"></i>
-                  </p>
-                </button>
+                <a class="flex flex-auto" href="/">
+                  <button class="text-center w-full">
+                    <p>
+                      <i class="fas fa-pencil-alt"></i>
+                    </p>
+                  </button>
+                </a>
+                <a class="flex flex-auto" href="/planning/elicitateView/{{$req['id']}}">
+                  <button class="text-center w-full">
+                    <p>
+                      <i class="fas fa-eye"></i>
+                    </p>
+                  </button>
+                </a>
+                <a class="flex flex-auto" href="/">
+                  <button class="text-center w-full">
+                    <p>
+                      <i class="fas fa-times"></i>
+                    </p>
+                  </button>
+                </a>
               </div>
             </td>
           </tr>
-          <tr class="h-12">
-            <td class="border border-theme-contrast text-center">16</td>
-            <td class="border border-theme-contrast pl-5">This is the description</td>
-            <td class="border border-theme-contrast">
-            <div class="flex flex-row">
-                <button class="flex flex-auto">
-                  <p class="text-center w-full">
-                    <i class="fas fa-pencil-alt"></i>
-                  </p>
-                </button>
-                <button class="flex flex-auto">
-                  <p class="text-center w-full">
-                    <i class="fas fa-eye"></i>
-                  </p>
-                </button>
-                <button class="flex flex-auto">
-                  <p class="text-center w-full">
-                    <i class="fas fa-times"></i>
-                  </p>
-                </button>
-              </div>
-            </td>
-          </tr>
-          <tr class="h-12">
-            <td class="border border-theme-contrast text-center">18</td>
-            <td class="border border-theme-contrast pl-5">This is the description</td>
-            <td class="border border-theme-contrast">
-            <div class="flex flex-row">
-                <button class="flex flex-auto">
-                  <p class="text-center w-full color-red">
-                    <i class="fas fa-pencil-alt"></i>
-                  </p>
-                </button>
-                <button class="flex flex-auto">
-                  <p class="text-center w-full">
-                    <i class="fas fa-eye"></i>
-                  </p>
-                </button>
-                <button class="flex flex-auto">
-                  <p class="text-center w-full">
-                    <i class="fas fa-times"></i>
-                  </p>
-                </button>
-              </div>
-            </td>
-          </tr>
+          @endforeach
         </tbody>
       </table>
     </div>

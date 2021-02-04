@@ -16,6 +16,7 @@ class DatabaseSeeder extends Seeder
         $this->call([
           PhaseSeeder::class,
           TaskSeeder::class,
+          RequirementsExamplesSeeder::class,
         ]);
     }
 }

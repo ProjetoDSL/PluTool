@@ -1,4 +1,20 @@
-<div class="flex-initial scrollbar-thin scrollbar-thumb-theme-contrast scrollbar-track-theme-secondary overflow-y-auto text-white flex-col bg-theme-primary h-screen sm:w-32 lg:w-64 pt-12">
+<div class="flex-initial scrollbar-thin scrollbar-thumb-theme-contrast scrollbar-track-theme-secondary overflow-y-auto text-white flex-col bg-theme-primary h-screen sm:w-32 lg:w-64">
+  <div class="flex flex-col mb-5">
+    <div class="h-40 flex flex-wrap content-center justify-center">
+      <p> LOGO </p>
+    </div>
+    <div class="flex justify-between pr-2 pl-3">
+      <div class="flex">
+        <p> Nome </p>
+      </div>
+      <div class="flex-none text-bottom">
+        <p>
+          <i class="fas fa-sign-out-alt fa-fw"></i>
+        </p>
+      </div>
+    </div>
+  </div>
+
   @foreach ($activities as $phase => $tasks)
     <div class="sidebarActivityExpand flex items-center h-12 w-full cursor-pointer transition duration-200 ease-in-out hover:bg-theme-hover">
       <div class="flex-none w-16">

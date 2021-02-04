@@ -6,6 +6,7 @@ use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\View;
 
 use App\ViewComposers\AppComposer;
+use App\ViewComposers\ElicitateComposer;
 
 use App\Models\Phase;
 use App\Models\Task;
@@ -30,6 +31,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-      View::composer(['layout/app'], AppComposer::class); // makes phases and tasks visible to the views, specially sidebar and timeline
+      View::composer(['layout/app','phases/*'], AppComposer::class); // makes phases and tasks visible to the views, specially sidebar and timeline
+      View::composer(['phases/planning/*'], ElicitateComposer::class);
     }
 }
