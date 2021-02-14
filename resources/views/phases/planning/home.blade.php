@@ -7,7 +7,7 @@
   <div class="flex flex-col justify-evenly w-full h-full">
     <div class="flex justify-center w-full">
       <div class="flex flex-wrap h-full w-3/5 2xl:w-7/12 content-center" >
-        <img class="border-theme-secondary rounded-lg" src="{{ asset('images/planning.png') }}" alt="Planning" >
+        <img class="border-theme-secondary rounded-lg" src="{{ asset('storage/images/planning/planning.png') }}" alt="Planning" >
       </div>
     </div>
     <div class="flex w-full text-white">
