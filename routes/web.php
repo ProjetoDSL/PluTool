@@ -26,16 +26,3 @@ Route::get('/{phase}', [PhaseController::class, 'show']);
 Route::get('/{phase}/{task}', [TaskController::class, 'show']);
 
 Route::get('/{phase}/elicitateView/{id}', [RequirementController::class, 'show']);
-// function ($phase, $task) {
-
-//   // $_task = strtoupper(str_replace("-", ".", $task));
-
-//   // if(! array_key_exists($phase, $activities)){
-//   //   abort(404);
-//   // }
-//   // if(! array_key_exists($_task, $activities[$phase])) {
-//   //   abort(404);
-//   // };
-
-//   return view('phases.'.$phase.'.'.$task);
-// });
