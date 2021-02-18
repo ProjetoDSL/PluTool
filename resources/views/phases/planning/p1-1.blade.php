@@ -55,7 +55,7 @@
         <p class="ml-6"> View elicitation techniques </p>
       </a>
       <div class="flex justify-between w-1/5">
-        <a href="">
+        <a href="/planning/elicitateAdd">
           <button class="flex items-center h-12 w-36 text-sm bg-blue-400 focus:outline-none transition duration-200 ease-in-out hover:bg-green-200 focus:bg-theme-contrast">
             <div class="flex-auto">
               <p class="text-center text-xl font-semibold">Add New</p>
