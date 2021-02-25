@@ -14,23 +14,19 @@ class PostController extends Controller
 
     public function store(Request $request)
     {
+      // dd($request);
       $validatedData = $request->validate([
-        'description' => ['required', 'max:255'],
-        'contObg' => ['required'],
-        'cltExpec' => ['required'],
-        'risk' => ['required'],
-        'featComp' => ['required'],
-        'business' => ['required'],
-        'usage' => ['required']
+        'description' => 'required|max:250',
       ]);
-      $request->old(['description','contObg','cltExpec','featComp','usage']);
-      $validator = Validator::make($request->all(), $validatedData);
+      
+      // $request->old(['description','contObg','cltExpec','featComp','usage']);
+      // $validator = Validator::make($request->all(), $validatedData);
 
-      if ($validator->fails())
-        {
-            return redirect()->back()->withErrors($validator->errors());
-        }
+      // if ($validator->fails())
+      //   {
+      //     return redirect()->back()->withErrors($validator->errors());
+      //   }
 
-      return view('phases.planning.p1-1');
+      return redirect('planning/p1-1')->with('success', 'Sucesso');
     }
 }

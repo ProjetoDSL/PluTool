@@ -23,7 +23,7 @@
         <div class="flex-auto m-5">
           <label for="description">Description</label>
           <label for="description" class="text-red-200">{{$errors->first('description')}}</label>
-          <input id="description" maxlength="250" name="Descricao" value="{{old('description')}}" class="flex-auto break-words rounded-lg w-full h-full p-2 text-xl text-black focus:border-transparent {{$errors->has('description') ? 'border-red-500 border-2' : ''}}" placeholder="This requirement is about..."/>
+          <input id="description" maxlength="250" name="description" value="{{old('description')}}" class="flex-auto break-words rounded-lg w-full h-full p-2 text-xl text-black focus:border-transparent {{$errors->has('description') ? 'border-red-500 border-2' : ''}}" placeholder="This requirement is about..."/>
         </div>
           <!-- @if ($errors->has('description'))
             <p class="flex-none text-red-200 ml-5 mt-2"> {{$errors->first('description')}} </p>
