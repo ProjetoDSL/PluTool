@@ -1,4 +1,4 @@
-<div class="flex-initial scrollbar-thin scrollbar-thumb-theme-contrast scrollbar-track-theme-secondary overflow-y-auto text-white flex-col bg-theme-primary h-screen sm:w-32 lg:w-64">
+<div id="sidebar" class="flex-initial transition scrollbar-thin scrollbar-thumb-theme-contrast scrollbar-track-theme-secondary overflow-y-auto text-white flex-col bg-theme-primary h-screen sm:w-32 lg:w-64">
   <div class="flex flex-col mb-5">
     <div class="h-40 flex flex-wrap content-center justify-center">
       <p> LOGO </p>
@@ -58,6 +58,20 @@
 </div>
 <script src="{{ asset('js/app.js') }}"></script>
 <script>
+  var navOpen = 1;
+  function actionNav() {
+    if(navOpen){
+      document.getElementById("sidebar").style.width = "0px";
+      document.getElementById("sidebar").style.transition = "all 0.7s";
+      // document.getElementById("main").style.marginLeft = "0";
+      navOpen = 0;
+    }else{
+      document.getElementById("sidebar").style.width = "250px";
+      // document.getElementById("main").style.marginLeft = "250px";
+      navOpen = 1;
+    }
+  }
+
   $(function() {
     $(".sidebarActivityExpand").on("click", function() {
       $("div:last-child > p > i.fa-chevron-right", this).switchClass('fa-chevron-right', 'fa-chevron-down', 10);

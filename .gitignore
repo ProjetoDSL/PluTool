@@ -26,3 +26,5 @@ public/css
 public/fonts
 public/js
 public/images/vendor
+
+.prettierrc

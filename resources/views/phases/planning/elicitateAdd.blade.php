@@ -16,72 +16,71 @@
   </div>
 
   @endif -->
-  <form action="/planning/elicitateAdd" class="flex h-full w-full flex-col justify-evenly" method="POST">
+  <form action="/planning/elicitateAdd" class="flex h-full w-full flex-col justify-start" method="POST">
     @csrf
-    <div class="flex flex-auto flex-col justify-evenly">
-      <div class="flex-auto m-5">
-        <label for="description">Description</label>
-        <label for="description" class="text-red-200">{{$errors->first('description')}}</label>
-        <input id="description" size="255" name="Descricao" value="{{old('description')}}" class="flex-auto w-full h-full p-2 text-xl text-black focus:border-transparent {{$errors->has('description') ? 'border-red-500 border-2' : ''}}" placeholder="This requirement is about..."/>
-      </div>
-        <!-- @if ($errors->has('description'))
-          <p class="flex-none text-red-200 ml-5 mt-2"> {{$errors->first('description')}} </p>
-        @endif -->
-      <div class="flex-auto flex flex-row justify-evenly">
+    <div class="flex flex-none flex-col justify-start">
+      <div class="flex flex-none flex-col justify-evenly">
         <div class="flex-auto m-5">
-          <label for="contObg">Contractual Obrigations</label>
-          <label for="contObg" class="text-red-200">{{$errors->first('contObg')}}</label>
-          <input id="contObg"  name="contObg" value="{{old('contObg')}}" class="flex-auto w-full h-full p-2 text-xl text-black {{$errors->has('contObg') ? 'border-red-400 border-2' : ''}}" placeholder="The duties under the contract"/>
+          <label for="description">Description</label>
+          <label for="description" class="text-red-200">{{$errors->first('description')}}</label>
+          <input id="description" maxlength="250" name="Descricao" value="{{old('description')}}" class="flex-auto break-words rounded-lg w-full h-full p-2 text-xl text-black focus:border-transparent {{$errors->has('description') ? 'border-red-500 border-2' : ''}}" placeholder="This requirement is about..."/>
         </div>
-        <div class="flex-auto m-5">
-          <label for="cltExpec">Client Expectations</label>
-          <label for="cltExpec" class="text-red-200">{{$errors->first('cltExpec')}}</label>
-          <input id="cltExpec" name="cltExpec" value="{{old('cltExpec')}}" class="flex-auto w-full h-full p-2 text-xl text-black {{$errors->has('cltExpec') ? 'border-red-400 border-2' : ''}}" placeholder="What the client expects with this requirement"/>
-        </div>
-      </div>
-      <!-- @if ($errors->has('cltExpec'))
-        <div class="flex-auto flex flex-row justify-evenly text-left">
-          @if ($errors->has('contObg'))
-            <p class="flex-auto text-red-200 ml-5 mt-2"> {{$errors->first('contObg')}} </p>
-          @endif
-          @if ($errors->has('cltExpec'))
-            <p class="flex-auto text-red-200 ml-5 mt-2 "> {{$errors->first('cltExpec')}} </p>
-          @endif
-        </div>
-      @endif -->
-    </div>
-
-    <div class="flex-auto flex flex-row justify-between">
-      <div class=" flex justify-between flex-col m-5 w-1/2">
-        <div class="flex justify-between mb-2">
-          <p class="flex-none text-xl">Risks to be mitigated</p>
-          <div class="flex-none text-bottom h-full ml-1 w-1/12 p-1">
-            <button class="w-full h-full text-sm bg-green-300" onclick="addRiskFields()" type="button">
-              <p class="text-center">
-                <i class="fas fa-plus fa-xs"></i>
-              </p>
-            </button>
+          <!-- @if ($errors->has('description'))
+            <p class="flex-none text-red-200 ml-5 mt-2"> {{$errors->first('description')}} </p>
+          @endif -->
+        <div class="flex-auto flex flex-row justify-between">
+          <div class=" flex justify-between flex-col m-5 h-1/2 w-1/2">
+            <div class="flex-none h-full mt-5 mb-5">
+              <label for="contObg">Contractual Obrigations</label>
+              <label for="contObg" class="text-red-200">{{$errors->first('contObg')}}</label>
+              <input id="contObg"  maxlength="250" name="contObg" value="{{old('contObg')}}" class="flex-auto rounded-lg w-full h-full p-2 text-xl text-black {{$errors->has('contObg') ? 'border-red-400 border-2' : ''}}" placeholder="The duties under the contract"/>
+            </div>
           </div>
-        </div>
-        <div class="flex justify-evenly flex-col" id="risks">
-          <div class="flex justify-between pr-2 pl-3 mb-1">
-            <div class="flex-auto">
-              <input id="risk1" name="risk" class="flex-auto w-full h-full p-2 text-lg text-black {{$errors->has('risk') ? 'border-red-400 border-2' : ''}}" placeholder="Risk 1"/>
+          <div class=" flex justify-between flex-col m-5 h-1/2 w-1/2">
+            <div class="flex-none h-full mt-5 mb-5">
+              <label for="cltExpec">Client Expectations</label>
+              <label for="cltExpec" class="text-red-200">{{$errors->first('cltExpec')}}</label>
+              <input id="cltExpec" maxlength="250" name="cltExpec" value="{{old('cltExpec')}}" class="flex-auto rounded-lg w-full h-full p-2 text-xl text-black {{$errors->has('cltExpec') ? 'border-red-400 border-2' : ''}}" placeholder="What the client expects with this requirement"/>
             </div>
           </div>
         </div>
-        <div class="flex-none h-1/2 mt-5 mb-5">
-          <label for="featComp">Available application features and components</label>
-          <label for="featComp" class="text-red-200">{{$errors->first('featComp')}}</label>
-          <input id="featComp" name="featComp" value="{{old('featComp')}}" class="flex-auto w-full h-5/6 pl-2 text-xl text-black {{$errors->has('featComp') ? 'border-red-400 border-2' : ''}}" placeholder="Available application features and components"/>
+        <!-- @if ($errors->has('cltExpec'))
+          <div class="flex-auto flex flex-row justify-evenly text-left">
+            @if ($errors->has('contObg'))
+              <p class="flex-auto text-red-200 ml-5 mt-2"> {{$errors->first('contObg')}} </p>
+            @endif
+            @if ($errors->has('cltExpec'))
+              <p class="flex-auto text-red-200 ml-5 mt-2 "> {{$errors->first('cltExpec')}} </p>
+            @endif
+          </div>
+        @endif -->
+      </div>
+
+      <div class="flex-auto flex flex-row justify-between">
+        <div class=" flex justify-between flex-col m-5 h-1/2 w-1/2">
+          <div class="flex-none h-full mt-5 mb-5">
+            <label for="featComp">Available application features and components</label>
+            <label for="featComp" class="text-red-200">{{$errors->first('featComp')}}</label>
+            <input id="featComp" maxlength="250" name="featComp" value="{{old('featComp')}}" class="flex-auto rounded-lg w-full h-full pl-2 text-xl text-black {{$errors->has('featComp') ? 'border-red-400 border-2' : ''}}" placeholder="Available application features and components"/>
+          </div>
+          
+        </div>
+        <div class="flex justify-between flex-col m-5 h-1/2 w-1/2">
+          <div class="flex-none h-full mt-5 mb-5">
+            <label for="usage">Application usage scenarios</label>
+            <label for="usage" class="text-red-200">{{$errors->first('usage')}}</label>
+            <input id="usage" maxlength="250" name="usage" value="{{old('usage')}}" class="flex-auto rounded-lg w-full h-full pl-2 text-xl text-black {{$errors->has('usage') ? 'border-red-400 border-2' : ''}}" placeholder="Application usage scenarios"/>
+          </div>
         </div>
       </div>
-      <div class="flex flex justify-between flex-col m-5 w-1/2">
+    </div>
+    <div class="flex-none flex flex-row justify-between top-0">
+      <div class=" flex flex-col m-5 w-1/2">
         <div class="flex justify-between mb-2">
           <p class="flex-none text-xl">Business requirements</p>
           <div class="flex-none text-bottom h-full ml-1 w-1/12 p-1">
             <button class="w-full h-full text-sm bg-green-300" onclick="addBussFields()" type="button">
-              <p class="text-center">
+              <p class="text-center inline-flex items-center">
                 <i class="fas fa-plus fa-xs"></i>
               </p>
             </button>
@@ -90,29 +89,46 @@
         <div class="flex justify-evenly flex-col" id="business">
           <div class="flex justify-between pr-2 pl-3 mb-1">
             <div class="flex-auto">
-              <input id="business1" name="business" class="flex-auto w-full h-full p-2 text-lg text-black {{$errors->has('business') ? 'border-red-400 border-2' : ''}}" placeholder="Business requirement 1"/>
+              <input id="business1" maxlength="250" name="business" class="flex-auto rounded-lg w-full h-full p-2 text-lg text-black {{$errors->has('business') ? 'border-red-400 border-2' : ''}}" placeholder="Business requirement 1"/>
             </div>
           </div>
         </div>
-        <div class="flex-none h-1/2 mt-5 mb-5">
-          <label for="usage">Application usage scenarios</label>
-          <label for="usage" class="text-red-200">{{$errors->first('usage')}}</label>
-          <input id="usage" name="usage" value="{{old('usage')}}" class="flex-auto w-full h-5/6 pl-2 text-xl text-black {{$errors->has('usage') ? 'border-red-400 border-2' : ''}}" placeholder="Application usage scenarios"/>
+      </div>
+      <div class=" flex flex-col m-5 w-1/2">
+        <div class="flex justify-between mb-2">
+          <p class="flex-none text-xl">Risks to be mitigated</p>
+          <div class="flex-none text-bottom h-full ml-1 w-1/12 p-1">
+            <button class="w-full h-full text-sm bg-green-300" onclick="addRiskFields()" type="button">
+              <p class="text-center inline-flex items-center">
+                <i class="fas fa-plus fa-xs"></i>
+              </p>
+            </button>
+          </div>
+        </div>
+        <div class="flex justify-evenly flex-col" id="risks">
+          <div class="flex justify-between pr-2 pl-3 mb-1">
+            <div class="flex-auto">
+              <input id="risk1" maxlength="250" name="risk" class="flex-auto rounded-lg w-full h-full p-2 text-lg text-black {{$errors->has('risk') ? 'border-red-400 border-2' : ''}}" placeholder="Risk 1"/>
+            </div>
+          </div>
         </div>
       </div>
     </div>
 
-    <div class="flex justify-end w-full">
-      <div class="flex justify-end w-1/5">
-        <a href="/planning/elicitate">
-          <button type="submit" class="flex items-center h-12 w-36 text-sm bg-blue-400 focus:outline-none transition duration-200 ease-in-out hover:bg-green-200 focus:bg-theme-contrast">
-            <div class="flex-auto">
-              <p class="text-center text-xl font-semibold">Add</p>
-            </div>
-          </button>
-        </a>
-      </div>
+    
+    <div class="flex fixed right-4 bottom-4 justify-end w-1/5">
+      <a href="/planning/elicitate">
+        <button type="submit" class="flex items-center h-12 w-36 text-sm bg-blue-400 focus:outline-none transition duration-200 ease-in-out hover:bg-green-200 focus:bg-theme-contrast">
+          <div class="flex-auto flex justify-evenly content-center">
+            <p class="text-center text-xl font-semibold">Add</p>
+            <p class="inline-flex items-center">
+              <i class="fas fa-plus fa-lg"></i>
+            </p>
+          </div>
+        </button>
+      </a>
     </div>
+    
 
   </form>
 </div>
@@ -139,7 +155,7 @@
       var input= document.createElement("input");
       input.id = "risk" + iR;
       input.name = "risk";
-      input.className = "flex-auto w-full h-full p-2 text-lg text-black {{$errors->has('risk') ? 'border-red-400 border-2' : ''}}"
+      input.className = "flex-auto w-full rounded-lg h-full p-2 text-lg text-black {{$errors->has('risk') ? 'border-red-400 border-2' : ''}}"
       input.placeholder = "Risk " + iR;
 
       var divButton = document.createElement("div");
@@ -205,7 +221,7 @@
       var input= document.createElement("input");
       input.id = "business" + iB;
       input.name = "business";
-      input.className = "flex-auto w-full h-full p-2 text-lg text-black {{$errors->has('business') ? 'border-red-400 border-2' : ''}}"
+      input.className = "flex-auto rounded-lg w-full h-full p-2 text-lg text-black {{$errors->has('business') ? 'border-red-400 border-2' : ''}}"
       input.placeholder = "Business requirement " + iB;
 
       var divButton = document.createElement("div");

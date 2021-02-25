@@ -25,21 +25,21 @@
                 <a class="flex flex-auto" href="/">
                   <button class="text-center w-full">
                     <p>
-                      <i class="fas fa-pencil-alt"></i>
+                      <i class="fas fa-pencil-alt fa-lg fill-current text-yellow-300"></i>
                     </p>
                   </button>
                 </a>
                 <a class="flex flex-auto" href="/planning/elicitateView/{{$req['id']}}">
                   <button class="text-center w-full">
                     <p>
-                      <i class="fas fa-eye"></i>
+                      <i class="fas fa-eye fa-lg fill-current text-green-600"></i>
                     </p>
                   </button>
                 </a>
                 <a class="flex flex-auto" href="/">
                   <button class="text-center w-full">
                     <p>
-                      <i class="fas fa-times"></i>
+                      <i class="fas fa-times fa-lg fill-current text-red-600"></i>
                     </p>
                   </button>
                 </a>
@@ -57,16 +57,22 @@
       <div class="flex justify-between w-1/5">
         <a href="/planning/elicitateAdd">
           <button class="flex items-center h-12 w-36 text-sm bg-blue-400 focus:outline-none transition duration-200 ease-in-out hover:bg-green-200 focus:bg-theme-contrast">
-            <div class="flex-auto">
+            <div class="flex-auto flex justify-evenly content-center">
               <p class="text-center text-xl font-semibold">Add New</p>
+              <p class="inline-flex items-center">
+                <i class="fas fa-plus fa-lg"></i>
+              </p>
             </div>
           </button>
         </a>
 
         <a href="">
           <button class="flex items-center h-12 w-36 text-sm bg-green-300 focus:outline-none transition duration-200 ease-in-out hover:bg-green-200 focus:bg-theme-contrast">
-            <div class="flex-auto">
+            <div class="flex-auto flex justify-evenly content-center">
               <p class="text-center text-xl font-semibold">Next</p>
+              <p class="inline-flex items-center">
+                <i class="fas fa-arrow-right fa-lg"></i>
+              </p>
             </div>
           </button>
         </a>
