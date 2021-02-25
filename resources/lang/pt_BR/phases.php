@@ -10,6 +10,7 @@ return [
 
     'planning' => 'Planejamento',
     'P1.1' => 'Elicitar Requisitos de Desempenho',
+        'P1.1.techniques' => 'Ver técnicas de elicitação',
     'P1.2' => 'Analisar Requisitos de Desempenho',
     'P1.3' => 'Especificar Requisitos de Desempenho',
     'P3.1' => 'Identificar Perfis de Usuário',

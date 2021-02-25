@@ -2,7 +2,7 @@
 @section('content')
 <div class="flex h-full flex-col">
   <div class="flex-none w-full text-white">
-    <p class="text-2xl">Planning</p>
+    <p class="text-2xl">{{ __('phases.planning') }}</p>
   </div>
   <div class="flex flex-col justify-evenly w-full h-full">
     <div class="flex justify-center w-full">
@@ -10,14 +10,11 @@
         <img class="border-theme-secondary rounded-lg" src="{{ asset('storage/images/planning/planning.png') }}" alt="Planning" >
       </div>
     </div>
-    <div class="flex w-full text-white">
-      <p class="2xl:text-xl w-full">
-        The planning phase is the first performance testing phase. <br/>
-        In this phase, some factors are mapped, such as the allocation of resources, be it infrastructure, data and also human resources involved in the test.<br/><br/>
-
-        The general scope of the performance test should be defined during the planning phase.<br/>
-        In addition, the identification and analysis of risks as well as information relevant to the test should also be mapped.<br/>
-        In summary, the definition of the test occurs in the planning phase.<br/>
+    <div class="flex w-full text-white justify-center">
+      <p class="2xl:text-xl w-1/2 text-justify">
+        {{ __('planning.par_1') }}
+        <br><br>
+        {{ __('planning.par_2') }}
       </p>
     </div>
   </div>
@@ -25,7 +22,7 @@
     <a href="/{{Request::path()}}/{{ strtolower(str_replace('.', '-', array_key_first($activities[Request::path()])))}}">
       <button class="flex items-center h-12 w-36 text-sm bg-green-300 focus:outline-none transition duration-200 ease-in-out hover:bg-green-200 focus:bg-theme-contrast">
         <div class="flex-auto">
-          <p class="text-center text-xl">Start</p>
+          <p class="text-center text-xl">{{ __('buttons.start') }}</p>
         </div>
       </button>
     </a>

@@ -10,6 +10,7 @@ return [
 
     'planning' => 'Planning',
     'P1.1' => 'Elicitate Performance Requirements',
+        'P1.1.techniques' => 'View elicitation techniques',
     'P1.2' => 'Analyze Performance Requirements',
     'P1.3' => 'Specify Performance Requirements',
     'P3.1' => 'Identify User Profiles',

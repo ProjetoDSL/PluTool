@@ -3,7 +3,7 @@
 @section('content')
 <div class="flex h-full flex-col text-white ">
   <div class="flex-none w-full text-white">
-    <p class="text-2xl text-left mb-20">Elicitate Performance Requirements</p>
+    <p class="text-2xl text-left mb-20">{{ __('phases.P1.1') }}</p>
   </div>
   @if(session()->has('success'))
   <div id="success" class="fixed w-56 bg-green-100 border top-1/2 left-1/2 break-words border-green-400 text-green-700 px-4 py-3 rounded" role="alert">
@@ -20,8 +20,8 @@
         <thead>
           <tr class="h-12">
             <th class="w-12 h-5 text-center">ID</th>
-            <th class="w-1/2 h-5 text-left">Description</th>
-            <th class="w-24 h-5 text-center">Actions</th>
+            <th class="w-1/2 h-5 text-left">{{ __('forms.description') }}</th>
+            <th class="w-24 h-5 text-center">{{ __('forms.actions') }}</th>
           </tr>
         </thead>
         <tbody>
@@ -61,14 +61,14 @@
     </div>
     <div class="flex justify-between w-full">
       <a href="">
-        <p class="ml-6"> View elicitation techniques </p>
+        <p class="ml-6">{{ __('phases.P1.1.techniques') }}</p>
       </a>
       <div class="flex justify-between w-1/5">
         <a href="/planning/elicitateAdd">
-          <button class="flex items-center h-12 w-36 text-sm bg-blue-400 focus:outline-none transition duration-200 ease-in-out hover:bg-green-200 focus:bg-theme-contrast">
+          <button class="flex items-center p-2 text-sm bg-blue-400 focus:outline-none transition duration-200 ease-in-out hover:bg-blue-600 focus:bg-theme-contrast">
             <div class="flex-auto flex justify-evenly content-center">
-              <p class="text-center text-xl font-semibold">Add New</p>
-              <p class="inline-flex items-center">
+              <p class="text-center text-xl font-semibold">{{ __('buttons.addNew') }}</p>
+              <p class="inline-flex ml-2 items-center">
                 <i class="fas fa-plus fa-lg"></i>
               </p>
             </div>
@@ -76,10 +76,10 @@
         </a>
 
         <a href="">
-          <button class="flex items-center h-12 w-36 text-sm bg-green-300 focus:outline-none transition duration-200 ease-in-out hover:bg-green-200 focus:bg-theme-contrast">
+          <button class="flex items-center p-2 text-sm bg-green-300 focus:outline-none transition duration-200 ease-in-out hover:bg-green-600 focus:bg-theme-contrast">
             <div class="flex-auto flex justify-evenly content-center">
-              <p class="text-center text-xl font-semibold">Next</p>
-              <p class="inline-flex items-center">
+              <p class="text-center text-xl font-semibold">{{ __('buttons.continue') }}</p>
+              <p class="inline-flex ml-2 items-center">
                 <i class="fas fa-arrow-right fa-lg"></i>
               </p>
             </div>
