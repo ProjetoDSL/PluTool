@@ -1,7 +1,8 @@
 <div id="sidebar" class="flex-initial transition scrollbar-thin scrollbar-thumb-theme-contrast scrollbar-track-theme-secondary overflow-y-auto text-white flex-col bg-theme-primary h-screen sm:w-32 lg:w-64">
   <div class="flex flex-col mb-5">
-    <div class="h-40 flex flex-wrap content-center justify-center">
-      <p> LOGO </p>
+    <div class="h-48 justify-center flex flex-col flex-wrap content-center">
+      <img class="w-32 h-32" src="{{ asset('storage/images/logo.png') }}" alt="Logo">
+      <p class="mt-2 text-center text-xl">Plutool</p>
     </div>
     <div class="flex justify-between pr-2 pl-3">
       <div class="flex">
