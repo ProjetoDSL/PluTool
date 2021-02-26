@@ -13,6 +13,21 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+use App\Http\Controllers\PhaseController;
+use App\Http\Controllers\TaskController;
+use App\Http\Controllers\RequirementController;
+use App\Http\Controllers\PostController;
+
 Route::get('/', function () {
-    return view('welcome');
+    return view('layout.app');
 });
+
+Route::get('/{phase}', [PhaseController::class, 'show']);
+
+Route::post('/{phase}/elicitateAdd', [PostController::class, 'store']);
+
+Route::get('/{phase}/elicitateAdd', [PostController::class, 'create']);
+
+Route::get('/{phase}/{task}', [TaskController::class, 'show']);
+
+Route::get('/{phase}/elicitateView/{id}', [RequirementController::class, 'show']);
