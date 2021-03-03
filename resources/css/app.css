@@ -6,3 +6,11 @@
 }
 @tailwind components;
 @tailwind utilities;
+@layer utilities {
+  .max-h-112 {
+    max-height: 28rem;
+  }
+  .max-h-128 {
+    max-height: 32rem;
+  }
+}
