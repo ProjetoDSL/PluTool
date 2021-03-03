@@ -19,15 +19,22 @@ use App\Http\Controllers\RequirementController;
 use App\Http\Controllers\PostController;
 
 Route::get('/', function () {
-    return view('layout.app');
+    return view('welcome');
 });
 
-Route::get('/{phase}', [PhaseController::class, 'show']);
+Route::get('/app', function () {
+  return view('home');
+});
 
-Route::post('/{phase}/elicitateAdd', [PostController::class, 'store']);
+Route::get('/app/{phase}', [PhaseController::class, 'show']);
 
-Route::get('/{phase}/elicitateAdd', [PostController::class, 'create']);
+Route::post('/app/{phase}/elicitateAdd', [PostController::class, 'store']);
 
-Route::get('/{phase}/{task}', [TaskController::class, 'show']);
+Route::get('/app/{phase}/elicitateAdd', [PostController::class, 'create']);
 
-Route::get('/{phase}/elicitateView/{id}', [RequirementController::class, 'show']);
+Route::get('/app/{phase}/{task}', [TaskController::class, 'show']);
+
+Route::get('/app/{phase}/elicitateView/{id}', [RequirementController::class, 'show']);
+
+
+require __DIR__.'/auth.php';

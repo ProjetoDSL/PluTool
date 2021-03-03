@@ -18,8 +18,9 @@
       </p>
     </div>
   </div>
+  {{-- {{dd($activities)}} --}}
   <div class="flex flex-wrap justify-end w-full">
-    <a href="/{{Request::path()}}/{{ strtolower(str_replace('.', '-', array_key_first($activities[Request::path()])))}}">
+    <a href="/{{Request::path()}}/{{ strtolower(str_replace('.', '-', array_key_first($activities['planning'])))}}">
       <button class="flex items-center h-12 w-36 text-sm bg-green-300 focus:outline-none transition duration-200 ease-in-out hover:bg-green-200 focus:bg-theme-contrast">
         <div class="flex-auto">
           <p class="text-center text-xl">{{ __('buttons.start') }}</p>

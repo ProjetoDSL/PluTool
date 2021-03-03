@@ -16,7 +16,8 @@ module.exports = {
           primary: '#1c263d',
           secondary: '#273146',
           contrast: '#5868f0',
-          hover: '#495163'
+          hover: '#495163',
+          green: '#57c64b'
         }
       }
     }
@@ -25,6 +26,8 @@ module.exports = {
     require('tailwind-scrollbar'),
   ],
   variants: {
-    extend: {},
+    extend: {
+      backgroundColor: ['active'],
+    }
   },
 }
