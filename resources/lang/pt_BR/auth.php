@@ -24,5 +24,9 @@ return [
     'confirmpassword' => 'Confirme a senha',
     'somethingWentWrong' => 'Ops! Algo deu errado.',
     'signup' => 'Cadastre-se',
+    'login' => 'Entrar',
+    'loginMsg' => 'Realize seu login abaixo.',
+    'rememberMe' => 'Lembrar identificação de usuário',
+    'forgotPassword' => 'Esqueceu a senha?',
     'signupMsg' => 'Para ter acesso ao PluTool, você deve primeiro criar uma conta.'
 ];
