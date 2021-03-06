@@ -28,5 +28,7 @@ return [
     'loginMsg' => 'Realize seu login abaixo.',
     'rememberMe' => 'Lembrar identificação de usuário',
     'forgotPassword' => 'Esqueceu a senha?',
+    'forgotMsg' => 'Sem problemas. Basta nos informar seu endereço de e-mail e enviaremos um link de redefinição de senha que permitirá que você escolha uma nova.',
+    'sendEmail'=> 'Enviar email',
     'signupMsg' => 'Para ter acesso ao PluTool, você deve primeiro criar uma conta.'
 ];
