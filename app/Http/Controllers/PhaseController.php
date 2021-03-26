@@ -11,7 +11,7 @@ class PhaseController extends Controller
     {
       $phase = Phase::where('description', $description)->firstOrFail()->description;
       return view(
-        'phases.'.$phase.'.home',
+      'phases.home',
         ['phase' => $phase]
       );
     }

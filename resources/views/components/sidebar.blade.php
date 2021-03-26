@@ -1,4 +1,4 @@
-<div id="sidebar" class="flex-initial transition scrollbar-thin scrollbar-thumb-theme-contrast scrollbar-track-theme-secondary overflow-y-auto text-white flex-col bg-theme-primary h-screen sm:w-32 lg:w-64">
+<div id="sidebar" class="flex-initial transition scrollbar-thin scrollbar-thumb-theme-contrast scrollbar-track-theme-secondary overflow-y-auto text-white flex-col bg-theme-primary h-screen sm:w-32 lg:w-64 pr-2">
   <div class="flex flex-col mb-5">
     <div class="h-48 justify-center flex flex-col flex-wrap content-center">
       <img class="w-32 h-32" src="{{ asset('storage/images/logo.png') }}" alt="Logo">
@@ -6,7 +6,7 @@
     </div>
     <div class="flex justify-between pr-2 pl-3">
       <div class="flex">
-        <p> {{Auth::user()->name}} </p>
+        {{-- <p> {{Auth::user()->name}} </p> --}}
       </div>
       <div class="flex-none text-bottom">
         <form method="POST" action="{{ route('logout') }}">
@@ -23,31 +23,25 @@
   </div>
   <div>
     @foreach ($activities as $phase => $tasks)
-      <div class="sidebarActivityExpand flex items-center h-12 w-full cursor-pointer transition duration-200 ease-in-out hover:bg-theme-hover">
-        <div class="flex-none w-16">
-          <p class="text-right mr-4">
-            <i class="fas fa-{{$icons[$phase]}}"></i>
-          </p>
-        </div>
-        <div class="sm:hidden lg:flex flex-auto">
-          <p class="text-left">{{ __('phases.'.$phase) }}</p>
-        </div>
-        <div class="flex-none w-10">
-          <p class="text-center">
-            <i class="fas fa-chevron-right fa-xs"></i>
-          </p>
-        </div>
+      <div class="flex justify-around items-center">
+        <a href="/app/{{$phase}}" class="w-5/6">
+          <button class="{{$phase == $actualPhase ? 'text-theme-contrast font-bold' : ''}} flex items-center p-2 cursor-pointer transition duration-200 ease-in-out hover:bg-theme-hover active:bg-theme-contrast gap-4 justify-start w-full">
+            <p class="w-6">
+              <i class="fas fa-{{$icons[$phase]}}"></i>
+            </p>
+            <p>{{ __('phases.'.$phase) }}</p>
+          </button>
+        </a>
+        <button class="sidebarActivityExpand w-1/6 p-2 text-center cursor-pointer transition duration-200 ease-in-out hover:bg-theme-hover">
+          <i class="fas fa-chevron-right fa-xs"></i>
+        </button>
       </div>
       <div class="hidden">
         @foreach ($tasks as $key => $val)
           <a href="/app/{{$phase}}/{{ strtolower(str_replace('.', '-', $key))}}">
-            <button class="flex items-center h-12 w-full text-sm bg-theme-secondary focus:outline-none transition duration-200 ease-in-out hover:bg-theme-hover focus:bg-theme-contrast">
-              <div class="flex-none w-16">
-                <p class="text-right mr-4">{{$key}}</p>
-              </div>
-              <div class="flex-auto">
-                <p class="text-left">{{__('phases.'.$key)}}</p>
-              </div>
+            <button class="flex items-center justify-between w-full text-sm bg-theme-secondary transition duration-200 ease-in-out hover:bg-theme-hover focus:bg-theme-contrast">
+              <p class="p-2 w-12">{{$key}}</p>
+              <p class="p-2 text-center w-full">{{__('phases.'.$key)}}</p>
             </button>
           </a>
         @endforeach
@@ -67,9 +61,9 @@
 <script>
   $(function() {
     $(".sidebarActivityExpand").on("click", function() {
-      $("div:last-child > p > i.fa-chevron-right", this).switchClass('fa-chevron-right', 'fa-chevron-down', 10);
-      $("div:last-child > p > i.fa-chevron-down", this).switchClass('fa-chevron-down', 'fa-chevron-right', 0);
-      $(this).next('div').toggle('blind', {}, 300);
+      $("i.fa-chevron-right", this).switchClass('fa-chevron-right', 'fa-chevron-down text-theme-contrast', 10);
+      $("i.fa-chevron-down", this).switchClass('fa-chevron-down text-theme-contrast', 'fa-chevron-right', 0);
+      $(this).parent().next('div').toggle('blind', {}, 300);
     });
 
     var navOpen = 1;
