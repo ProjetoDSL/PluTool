@@ -15,7 +15,7 @@
   <body>
     <div class="flex font-qsand text-lg">
       {{-- Home page --}}
-      @if ($title == 'Home')
+      @if ($title == 'Home' || $title == 'Login' || $title == 'Welcome')
       <div class="w-full h-screen bg-theme-primary p-2">
         <div class="flex text-white justify-center h-full w-full rounded-lg p-4 bg-theme-secondary">
           {{ $slot }}
