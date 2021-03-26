@@ -21,8 +21,10 @@
           {{ $slot }}
         </div>
       </div>
-      @else 
-      <x-sidebar/>
+      @else
+      <x-sidebar>
+        <x-slot name="actualPhase">{{$phase}}</x-slot>
+      </x-sidebar>
       <div class="flex flex-col w-full">
         <x-timeline>
           <x-slot name="phase">{{$phase}}</x-slot>
