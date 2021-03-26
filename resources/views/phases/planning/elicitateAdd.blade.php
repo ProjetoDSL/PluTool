@@ -1,7 +1,11 @@
-@extends('layout.app')
-
-@section('content')
-<div class="flex h-full flex-col text-white overflow-visible">
+<x-app>
+  <x-slot name="title">
+    {{$task}}
+  </x-slot>
+  <x-slot name="phase">
+    {{$phase}}
+  </x-slot>
+<div class="flex h-full w-full flex-col text-white overflow-visible">
   <div class="flex-none w-full text-white">
     <p class="text-2xl text-left mb-16">{{ __('phases.P1.1') }}</p>
   </div>
@@ -16,7 +20,7 @@
   </div>
 
   @endif -->
-  <form action="/planning/elicitateAdd" class="flex h-full w-full flex-col justify-start" method="POST">
+  <form action="/app/planning/elicitateAdd" class="flex h-full w-full flex-col justify-start" method="POST">
     @csrf
     <div class="flex flex-none flex-col justify-start">
       <div class="flex flex-none flex-col justify-evenly">
@@ -117,7 +121,7 @@
 
     
     <div class="flex fixed right-4 bottom-4 justify-end w-1/5">
-      <a href="/planning/elicitate">
+      <a href="/app/planning/p1-1">
         <button type="submit" class="flex p-2 items-center text-sm bg-blue-400 focus:outline-none transition duration-200 ease-in-out hover:bg-blue-600 focus:bg-theme-contrast">
           <div class="flex-auto flex justify-evenly content-center">
             <p class="text-center text-xl font-semibold">{{ __('buttons.add') }}</p>
@@ -266,4 +270,4 @@
     }
   }
 </script>
-@endsection
+</x-app>

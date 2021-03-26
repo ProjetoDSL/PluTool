@@ -36,9 +36,10 @@ Route::post('/app/{phase}/elicitateAdd', [PostController::class, 'store']);
 
 Route::get('/app/{phase}/elicitateAdd', [PostController::class, 'create']);
 
+Route::get('/app/{phase}/elicitateView/{id}', [RequirementController::class, 'show']);
+
 Route::get('/app/{phase}/{task}', [TaskController::class, 'show']);
 
-Route::get('/app/{phase}/elicitateView/{id}', [RequirementController::class, 'show']);
 
 
 require __DIR__.'/auth.php';

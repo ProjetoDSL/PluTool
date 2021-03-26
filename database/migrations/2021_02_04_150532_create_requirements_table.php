@@ -16,8 +16,8 @@ class CreateRequirementsTable extends Migration
         Schema::create('requirements', function (Blueprint $table) {
             $table->id();
             $table->string('description');
-            $table->string('contObrigations');
-            $table->string('cltExpectations');
+            $table->string('contObrigations')->nullable();
+            $table->string('cltExpectations')->nullable();
             $table->timestamps();
         });
     }

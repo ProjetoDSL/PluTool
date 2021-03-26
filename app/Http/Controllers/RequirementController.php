@@ -7,11 +7,13 @@ use App\Models\Requirement;
 
 class RequirementController extends Controller
 {
-    public function show(string $id)
+    public function show(string $phase,string $id)
     {
-      // $requirement = Requirement::find($id)->firstOrFail();
-      // ,['requirement'=>$requirement]
-      return view('phases.planning.elicitateView');
+      $requirement = Requirement::where('id', $id)->firstOrFail();
+      return view(
+        'phases.planning.elicitateView',
+        ['phase' => 'planning', 'task' => 'View Requirement', 'requirement'=>$requirement]
+      );
     }
 
 }

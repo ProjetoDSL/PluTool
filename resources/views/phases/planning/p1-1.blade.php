@@ -42,7 +42,7 @@
                     </p>
                   </button>
                 </a>
-                <a class="flex flex-auto" href="/planning/elicitateView/{{$req['id']}}">
+                <a class="flex flex-auto" href="/app/planning/elicitateView/{{$req['id']}}">
                   <button class="text-center w-full">
                     <p>
                       <i class="fas fa-eye fa-lg fill-current text-green-600"></i>
@@ -68,7 +68,7 @@
         <p class="ml-6">{{ __('phases.P1.1.techniques') }}</p>
       </a>
       <div class="flex justify-between w-1/5">
-        <a href="/planning/elicitateAdd">
+        <a href="/app/planning/elicitateAdd">
           <button class="flex items-center p-2 text-sm bg-blue-400 focus:outline-none transition duration-200 ease-in-out hover:bg-blue-600 focus:bg-theme-contrast">
             <div class="flex-auto flex justify-evenly content-center">
               <p class="text-center text-xl font-semibold">{{ __('buttons.addNew') }}</p>
