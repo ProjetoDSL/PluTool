@@ -5,5 +5,6 @@ return [
   'continue' => 'Continuar',
   'add' => 'Adicionar',
   'addNew' => 'Adicionar novo',
-  'back' => 'Voltar'
+  'back' => 'Voltar',
+  'update' => 'Atualizar'
 ];

@@ -20,7 +20,7 @@
   </div>
 
   @endif -->
-  <form action="/app/planning/elicitateAdd" class="flex h-full w-full flex-col justify-start" method="POST">
+  <form action="/app/planning/requirement/new" class="flex h-full w-full flex-col justify-start" method="POST">
     @csrf
     <div class="flex flex-none flex-col justify-start">
       <div class="flex flex-none flex-col justify-evenly">

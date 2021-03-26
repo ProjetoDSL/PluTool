@@ -9,7 +9,7 @@
   <div class="flex-none w-full text-white">
     <p class="text-2xl text-left mb-16">Elicitate Performance Requirements</p>
   </div>
-  <form action="/planning/elicitateAdd" class="flex h-full w-full flex-col justify-start" method="POST">
+  <form action="/app/planning/requirement/new" class="flex h-full w-full flex-col justify-start" method="POST">
     @csrf
     <div class="flex flex-none flex-col justify-start">
       <div class="flex flex-none flex-col justify-evenly">

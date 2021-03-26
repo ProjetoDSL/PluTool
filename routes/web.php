@@ -32,11 +32,17 @@ Route::get('/app', function () {
 
 Route::get('/app/{phase}/', [PhaseController::class, 'show']);
 
-Route::post('/app/{phase}/elicitateAdd', [PostController::class, 'store']);
+Route::post('/app/{phase}/requirement/new', [RequirementController::class, 'create']);
 
-Route::get('/app/{phase}/elicitateAdd', [PostController::class, 'create']);
+Route::get('/app/{phase}/requirement/new', [RequirementController::class, 'createView']);
 
-Route::get('/app/{phase}/elicitateView/{id}', [RequirementController::class, 'show']);
+Route::get('/app/{phase}/requirement/remove/{id}', [RequirementController::class, 'remove']);
+
+Route::post('/app/{phase}/requirement/update/{id}', [RequirementController::class, 'update']);
+
+Route::get('/app/{phase}/requirement/update/{id}', [RequirementController::class, 'updateView']);
+
+Route::get('/app/{phase}/requirement/view/{id}', [RequirementController::class, 'view']);
 
 Route::get('/app/{phase}/{task}', [TaskController::class, 'show']);
 
