@@ -3,6 +3,6 @@
     Home
   </x-slot>
   <div>
-    <p>adwadadad</p>
+    asdasdasd
   </div>
 </x-app>

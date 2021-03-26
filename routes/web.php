@@ -30,7 +30,7 @@ Route::get('/app', function () {
   return view('home');
 });
 
-Route::get('/app/{phase}', [PhaseController::class, 'show']);
+Route::get('/app/{phase}/', [PhaseController::class, 'show']);
 
 Route::post('/app/{phase}/elicitateAdd', [PostController::class, 'store']);
 

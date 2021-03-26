@@ -1,6 +1,10 @@
-@extends('layout.app')
-
-@section('content')
+<x-app>
+  <x-slot name="title">
+    {{$task}}
+  </x-slot>
+  <x-slot name="phase">
+    {{$phase}}
+  </x-slot>
 <div class="flex h-full flex-col text-white ">
   <div class="flex-none w-full text-white">
     <p class="text-2xl text-left mb-20">{{ __('phases.P1.1') }}</p>
@@ -95,5 +99,4 @@
   } 
   setTimeout("closeit", 3000);
 </script>
-
-@endsection
+</x-app>
