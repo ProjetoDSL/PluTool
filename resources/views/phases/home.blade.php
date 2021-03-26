@@ -26,11 +26,11 @@
     {{-- {{dd($activities)}} --}}
     <div class="flex flex-wrap justify-end w-full">
       <a href="/{{Request::path()}}/{{ strtolower(str_replace('.', '-', array_key_first($activities[$phase])))}}">
-        <button class="flex items-center h-12 w-36 text-sm bg-green-300 focus:outline-none transition duration-200 ease-in-out hover:bg-green-200 focus:bg-theme-contrast">
+        <x-button color="green">
           <div class="flex-auto">
             <p class="text-center text-xl">{{ __('buttons.start') }}</p>
           </div>
-        </button>
+        </x-button>
       </a>
     </div>
   </div>

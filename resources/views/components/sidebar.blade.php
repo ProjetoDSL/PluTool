@@ -61,9 +61,9 @@
 <script>
   $(function() {
     $(".sidebarActivityExpand").on("click", function() {
-      $("i.fa-chevron-right", this).switchClass('fa-chevron-right', 'fa-chevron-down text-theme-contrast', 10);
+      $("i.fa-chevron-right", this).switchClass('fa-chevron-right', 'fa-chevron-down text-theme-contrast', 30);
       $("i.fa-chevron-down", this).switchClass('fa-chevron-down text-theme-contrast', 'fa-chevron-right', 0);
-      $(this).parent().next('div').toggle('blind', {}, 300);
+      $(this).parent().next('div').toggle('blind', {}, 200);
     });
 
     var navOpen = 1;
