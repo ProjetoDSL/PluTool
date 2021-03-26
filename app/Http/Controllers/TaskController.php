@@ -15,10 +15,10 @@ class TaskController extends Controller
         ->where('phase_id', $phase->id)
         ->firstOrFail()
         ->title;
-
-      return view('phases.'
-        .$phase->description.'.'
-        .strtolower(str_replace(".", "-", $task))
+      
+      return view(
+        'phases.'.$phase->description.'.'.strtolower(str_replace(".", "-", $task)),
+        ['phase' => $phase->description, 'task' => $task]
       );
     }
 }

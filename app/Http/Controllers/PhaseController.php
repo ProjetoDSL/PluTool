@@ -9,7 +9,11 @@ class PhaseController extends Controller
 {
     public function show(string $description)
     {
-      return view('phases.'.Phase::where('description', $description)->firstOrFail()->description.'.home');
+      $phase = Phase::where('description', $description)->firstOrFail()->description;
+      return view(
+        'phases.'.$phase.'.home',
+        ['phase' => $phase]
+      );
     }
 
 }

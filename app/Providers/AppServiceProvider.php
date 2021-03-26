@@ -31,7 +31,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-      View::composer(['layout/app','phases/*'], AppComposer::class); // makes phases and tasks visible to the views, specially sidebar and timeline
+      View::composer(['components/*','phases/*'], AppComposer::class); // makes phases and tasks visible to the views, specially sidebar and timeline
       View::composer(['phases/planning/*'], ElicitateComposer::class);
     }
 }

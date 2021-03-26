@@ -9,28 +9,31 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300&display=swap" rel="stylesheet">
 
-    <title>{{ config('app.name').' | '.$title ?? config('app.name')}}</title>
+    <title>{{ config('app.name').' | '. ucfirst($title) ?? config('app.name')}}</title>
 
   </head>
   <body>
-    <div class="font-qsand text-lg">
+    <div class="flex font-qsand text-lg">
       {{-- Home page --}}
+      @if ($title == 'Home')
       <div class="w-full h-screen bg-theme-primary p-2">
         <div class="flex text-white justify-center h-full w-full rounded-lg p-4 bg-theme-secondary">
           {{ $slot }}
         </div>
       </div>
-      {{-- @if(isset(explode('/', Request::path())[1]))
-        @include('layout.sidebar')
-        <div class="flex flex-col w-full">
-          @include('layout.timeline')
-          <div class="flex w-full h-full bg-theme-primary p-2">
-            <div class="flex-auto h-full w-full rounded-lg p-4 bg-theme-secondary">
-              {{ $slot }}
-            </div>
+      @else 
+      <x-sidebar/>
+      <div class="flex flex-col w-full">
+        <x-timeline>
+          <x-slot name="phase">{{$phase}}</x-slot>
+        </x-timeline>
+        <div class="w-full h-full bg-theme-primary p-2">
+          <div class="flex justify-center h-full w-full rounded-lg p-4 bg-theme-secondary">
+            {{ $slot }}
           </div>
         </div>
-      @endif --}}
+      </div>
+      @endif
     </div>
   </body>
 </html>
