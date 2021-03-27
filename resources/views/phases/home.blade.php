@@ -27,9 +27,8 @@
     <div class="flex flex-wrap justify-end w-full">
       <a href="/{{Request::path()}}/{{ strtolower(str_replace('.', '-', array_key_first($activities[$phase])))}}">
         <x-button color="green">
-          <div class="flex-auto">
-            <p class="text-center text-xl">{{ __('buttons.start') }}</p>
-          </div>
+          <p class="text-xl">{{ __('buttons.start') }}</p>
+          <i class="fas fa-play"></i>
         </x-button>
       </a>
     </div>

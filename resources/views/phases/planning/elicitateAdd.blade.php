@@ -5,11 +5,9 @@
   <x-slot name="phase">
     {{$phase}}
   </x-slot>
-<div class="flex h-full w-full flex-col text-white overflow-visible">
-  <div class="flex-none w-full text-white">
-    <p class="text-2xl text-left mb-16">{{ __('phases.P1.1') }}</p>
-  </div>
-  <!-- @if ($errors->any())
+<div class="flex flex-col flex-1 text-white">
+  <p class="text-2xl text-left mb-16">{{ __('phases.P1.1') }}</p>
+  {{-- <!-- @if ($errors->any())
   <div class="bg-red-100 border-l-4 border-red-500 text-red-700 p-4" role="alert">
     <p class="font-bold">Form error!</p>
     <div class="ml-5 alert alert-danger">
@@ -18,9 +16,8 @@
       @endforeach
     </div>
   </div>
-
-  @endif -->
-  <form action="/app/planning/requirement/new" class="flex h-full w-full flex-col justify-start" method="POST">
+  @endif --> --}}
+  <form action="/app/planning/requirement/new" class="flex flex-1 flex-col justify-between" method="POST">
     @csrf
     <div class="flex flex-none flex-col justify-start">
       <div class="flex flex-none flex-col justify-evenly">
@@ -59,7 +56,6 @@
           </div>
         @endif -->
       </div>
-
       <div class="flex-auto flex flex-row justify-between">
         <div class=" flex justify-between flex-col m-5 h-1/2 w-1/2">
           <div class="flex-none h-full mt-5 mb-5">
@@ -67,7 +63,7 @@
             <label for="featComp" class="text-red-200">{{$errors->first('featComp')}}</label>
             <input id="featComp" maxlength="250" name="featComp" value="{{old('featComp')}}" class="flex-auto rounded-lg w-full h-full pl-2 text-xl text-black {{$errors->has('featComp') ? 'border-red-400 border-2' : ''}}" placeholder="{{ __('forms.availableFeatures.PH') }}"/>
           </div>
-          
+
         </div>
         <div class="flex justify-between flex-col m-5 h-1/2 w-1/2">
           <div class="flex-none h-full mt-5 mb-5">
@@ -77,63 +73,45 @@
           </div>
         </div>
       </div>
-    </div>
-    <div class="flex-none flex flex-row justify-between top-0">
-      <div class=" flex flex-col m-5 w-1/2">
-        <div class="flex justify-between mb-2">
-          <p class="flex-none text-xl">{{ __('forms.businessRequirements') }}</p>
-          <div class="flex-none text-bottom h-full ml-1 w-1/12 p-1">
-            <button class="w-full h-full text-sm bg-green-300" onclick="addBussFields()" type="button">
-              <p class="text-center inline-flex items-center">
-                <i class="fas fa-plus fa-xs"></i>
-              </p>
-            </button>
+      <div class="flex-none flex flex-row justify-between top-0">
+        <div class=" flex flex-col m-5 w-1/2">
+          <div class="flex justify-between mb-2">
+            <p class="flex-none text-xl">{{ __('forms.businessRequirements') }}</p>
+            <x-button color="green" onclick="addBussFields()" type="button">
+              <i class="fas fa-plus fa-xs"></i>
+            </x-button>
           </div>
-        </div>
-        <div class="flex justify-evenly flex-col" id="business">
-          <div class="flex justify-between pr-2 pl-3 mb-1">
-            <div class="flex-auto">
-              <input id="business1" maxlength="250" name="business" class="flex-auto rounded-lg w-full h-full p-2 text-lg text-black {{$errors->has('business') ? 'border-red-400 border-2' : ''}}" placeholder="{{ __('forms.businessRequirement') }} 1"/>
+          <div class="flex justify-evenly flex-col" id="business">
+            <div class="flex justify-between pr-2 pl-3 mb-1">
+              <div class="flex-auto">
+                <input id="business1" maxlength="250" name="business" class="flex-auto rounded-lg w-full h-full p-2 text-lg text-black {{$errors->has('business') ? 'border-red-400 border-2' : ''}}" placeholder="{{ __('forms.businessRequirement') }} 1"/>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-      <div class=" flex flex-col m-5 w-1/2">
-        <div class="flex justify-between mb-2">
-          <p class="flex-none text-xl">{{ __('forms.risksMitigated') }}</p>
-          <div class="flex-none text-bottom h-full ml-1 w-1/12 p-1">
-            <button class="w-full h-full text-sm bg-green-300" onclick="addRiskFields()" type="button">
-              <p class="text-center inline-flex items-center">
-                <i class="fas fa-plus fa-xs"></i>
-              </p>
-            </button>
+        <div class=" flex flex-col m-5 w-1/2">
+          <div class="flex justify-between mb-2">
+            <p class="flex-none text-xl">{{ __('forms.risksMitigated') }}</p>
+            <x-button color="green" onclick="addRiskFields()" type="button">
+              <i class="fas fa-plus fa-xs"></i>
+            </x-button>
           </div>
-        </div>
-        <div class="flex justify-evenly flex-col" id="risks">
-          <div class="flex justify-between pr-2 pl-3 mb-1">
-            <div class="flex-auto">
-              <input id="risk1" maxlength="250" name="risk" class="flex-auto rounded-lg w-full h-full p-2 text-lg text-black {{$errors->has('risk') ? 'border-red-400 border-2' : ''}}" placeholder="{{ __('forms.risk') }} 1"/>
+          <div class="flex justify-evenly flex-col" id="risks">
+            <div class="flex justify-between pr-2 pl-3 mb-1">
+              <div class="flex-auto">
+                <input id="risk1" maxlength="250" name="risk" class="flex-auto rounded-lg w-full h-full p-2 text-lg text-black {{$errors->has('risk') ? 'border-red-400 border-2' : ''}}" placeholder="{{ __('forms.risk') }} 1"/>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </div>
-
-    
-    <div class="flex fixed right-4 bottom-4 justify-end w-1/5">
-      <a href="/app/planning/p1-1">
-        <button type="submit" class="flex p-2 items-center text-sm bg-blue-400 focus:outline-none transition duration-200 ease-in-out hover:bg-blue-600 focus:bg-theme-contrast">
-          <div class="flex-auto flex justify-evenly content-center">
-            <p class="text-center text-xl font-semibold">{{ __('buttons.add') }}</p>
-            <p class="inline-flex ml-2 items-center">
-              <i class="fas fa-plus fa-lg"></i>
-            </p>
-          </div>
-        </button>
-      </a>
-    </div>
-    
-
+    <a href="/app/planning/p1-1" class="flex justify-end">
+      <x-button type="submit" color="blue">
+        <p class="text-center text-xl font-semibold">{{ __('buttons.add') }}</p>
+        <i class="fas fa-plus"></i>
+      </x-button>
+    </a>
   </form>
 </div>
 
@@ -167,7 +145,7 @@
       divButton.id="riskButton"+iR;
 
       var button = document.createElement("button");
-      button.className = "w-full h-full text-sm bg-red-300";
+      button.className = "w-full h-full text-sm bg-theme-red";
       button.type = "button";
       button.onclick= function() {
         this.parentNode.parentNode.remove();
@@ -233,7 +211,7 @@
       divButton.id="busButton"+iB;
 
       var button = document.createElement("button");
-      button.className = "w-full h-full text-sm bg-red-300";
+      button.className = "w-full h-full text-sm bg-theme-red";
       button.type = "button";
       button.onclick= function() {
         this.parentNode.parentNode.remove();

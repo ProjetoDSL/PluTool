@@ -25,7 +25,7 @@
     @foreach ($activities as $phase => $tasks)
       <div class="flex justify-around items-center">
         <a href="/app/{{$phase}}" class="w-5/6">
-          <button class="{{$phase == $actualPhase ? 'text-theme-contrast font-bold' : ''}} flex items-center p-2 cursor-pointer transition duration-200 ease-in-out hover:bg-theme-hover active:bg-theme-contrast gap-4 justify-start w-full">
+          <button class="{{$phase == $actualPhase ? 'border-l-4 border-theme-contrast bg-theme-contrast bg-opacity-20' : ''}} flex items-center p-2 cursor-pointer transition duration-200 ease-in-out hover:bg-theme-hover active:bg-theme-contrast gap-4 justify-start w-full">
             <p class="w-6">
               <i class="fas fa-{{$icons[$phase]}}"></i>
             </p>

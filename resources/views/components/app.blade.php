@@ -13,11 +13,11 @@
 
   </head>
   <body>
-    <div class="flex font-qsand text-lg">
+    <div class="flex w-screen h-screen font-qsand text-lg bg-theme-primary">
       {{-- Home page --}}
       @if ($title == 'Home' || $title == 'Login' || $title == 'Welcome')
-      <div class="w-full h-screen bg-theme-primary p-2">
-        <div class="flex text-white justify-center h-full w-full rounded-lg p-4 bg-theme-secondary">
+      <div class="flex p-2 w-full">
+        <div class="flex flex-1 justify-center p-2 bg-theme-light">
           {{ $slot }}
         </div>
       </div>
@@ -29,8 +29,8 @@
         <x-timeline>
           <x-slot name="phase">{{$phase}}</x-slot>
         </x-timeline>
-        <div class="w-full h-full bg-theme-primary p-2">
-          <div class="flex justify-center h-full w-full rounded-lg p-4 bg-theme-secondary">
+        <div class="flex flex-1 p-2">
+          <div class="flex justify-center p-2 flex-1 bg-theme-contrast bg-opacity-25">
             {{ $slot }}
           </div>
         </div>

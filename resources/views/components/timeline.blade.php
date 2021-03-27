@@ -1,4 +1,4 @@
-<div class="flex-initial bg-theme-secondary w-full h-12 flex-col">
+<div class="flex-initial bg-theme-secondary h-12 ml-2">
   <div class="flex text-white items-center h-full">
     <div id="navSquash" class="flex-none w-12 h-full">
       <button class="h-full w-full cursor-pointer focus:outline-none active:bg-theme-contrast transition ease-in-out duration-200 hover:bg-theme-hover">
@@ -6,7 +6,7 @@
       </button>
     </div>
     <div class="flex-none w-12 h-full">
-      <a href="/app/{{(string)$phase}}"> 
+      <a href="/app/{{(string)$phase}}">
         <button class="h-full w-full cursor-pointer focus:outline-none focus:bg-theme-contrast transition ease-in-out duration-200 hover:bg-theme-hover"><p><i class="fas fa-home fa-lg"></i></p></button>
       </a>
     </div>
@@ -16,13 +16,14 @@
     </div>
     @endforeach
   </div>
-  <script>
-    $(function() {
-      var count = $('.timelineTask').length,
-      choice = 1 + Math.floor(Math.random() * count);
-
-      $('.timelineTask > button').eq(0).css('border-color', '#57c64b')
-      $('.timelineTask > button').eq(1).css('border-color', '#528ad8')
-    })
-  </script>
 </div>
+
+<script>
+  $(function() {
+    var count = $('.timelineTask').length,
+    choice = 1 + Math.floor(Math.random() * count);
+
+    $('.timelineTask > button').eq(0).css('border-color', '#57c64b')
+    $('.timelineTask > button').eq(1).css('border-color', '#528ad8')
+  })
+</script>

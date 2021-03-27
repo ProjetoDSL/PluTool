@@ -5,10 +5,8 @@
   <x-slot name="phase">
     {{$phase}}
   </x-slot>
-<div class="flex h-full flex-col text-white ">
-  <div class="flex-none w-full text-white">
-    <p class="text-2xl text-left mb-20">{{ __('phases.P1.1') }}</p>
-  </div>
+<div class="flex flex-1 flex-col text-white justify-between gap-12">
+  <p class="text-2xl">{{ __('phases.P1.1') }}</p>
   @if(session()->has('success'))
   <div id="success" class="fixed w-80 bg-green-100 border top-1/2 left-1/2 break-words border-green-400 text-green-700 px-4 py-3 rounded translate-x-1/2" role="alert">
     <strong class="font-bold">{{__('returns.success')}}</strong>
@@ -18,85 +16,74 @@
     </span>
   </div>
   @endif
-  <div class="flex flex-col justify-between w-full h-full">
-    <div class="flex flex-wrap justify-center">
-      <table class="table-fixed border-collapse w-10/12">
-        <thead>
-          <tr class="h-12">
-            <th class="w-12 h-5 text-center">ID</th>
-            <th class="w-1/2 h-5 text-left">{{ __('forms.description') }}</th>
-            <th class="w-24 h-5 text-center">{{ __('forms.actions') }}</th>
-          </tr>
-        </thead>
-        <tbody>
-          @foreach ($requirements as $req)
-          <tr class="h-12">
-            <td class="border border-theme-contrast text-center"><p>{{$req['id']}}</p></td>
-            <td class="border border-theme-contrast pl-5">{{$req['description']}}</td>
-            <td class="border border-theme-contrast">
-              <div class="flex flex-row">
-                <a class="flex flex-auto" href="/app/planning/requirement/update/{{$req['id']}}">
-                  <button class="text-center w-full">
-                    <p>
-                      <i class="fas fa-pencil-alt fa-lg fill-current text-yellow-300"></i>
-                    </p>
-                  </button>
-                </a>
-                <a class="flex flex-auto" href="/app/planning/requirement/view/{{$req['id']}}">
-                  <button class="text-center w-full">
-                    <p>
-                      <i class="fas fa-eye fa-lg fill-current text-green-600"></i>
-                    </p>
-                  </button>
-                </a>
-                <a class="flex flex-auto" href="/app/planning/requirement/remove/{{$req['id']}}">
-                  <button class="text-center w-full">
-                    <p>
-                      <i class="fas fa-times fa-lg fill-current text-red-600"></i>
-                    </p>
-                  </button>
-                </a>
-              </div>
-            </td>
-          </tr>
-          @endforeach
-        </tbody>
-      </table>
-    </div>
-    <div class="flex justify-between w-full">
-      <a href="">
-        <p class="ml-6">{{ __('phases.P1.1.techniques') }}</p>
+  <div class="flex flex-1 justify-center">
+    <table class="table-fixed border-collapse w-10/12">
+      <thead>
+        <tr class="h-12">
+          <th class="w-12 h-5 text-center">ID</th>
+          <th class="w-1/2 h-5 text-left">{{ __('forms.description') }}</th>
+          <th class="w-24 h-5 text-center">{{ __('forms.actions') }}</th>
+        </tr>
+      </thead>
+      <tbody>
+        @foreach ($requirements as $req)
+        <tr class="h-12">
+          <td class="border border-theme-contrast text-center"><p>{{$req['id']}}</p></td>
+          <td class="border border-theme-contrast pl-5">{{$req['description']}}</td>
+          <td class="border border-theme-contrast">
+            <div class="flex flex-row">
+              <a class="flex flex-auto" href="/app/planning/requirement/update/{{$req['id']}}">
+                <button class="text-center w-full">
+                  <p>
+                    <i class="fas fa-pencil-alt fa-lg fill-current text-yellow-300"></i>
+                  </p>
+                </button>
+              </a>
+              <a class="flex flex-auto" href="/app/planning/requirement/view/{{$req['id']}}">
+                <button class="text-center w-full">
+                  <p>
+                    <i class="fas fa-eye fa-lg fill-current text-green-600"></i>
+                  </p>
+                </button>
+              </a>
+              <a class="flex flex-auto" href="/app/planning/requirement/remove/{{$req['id']}}">
+                <button class="text-center w-full">
+                  <p>
+                    <i class="fas fa-times fa-lg fill-current text-red-600"></i>
+                  </p>
+                </button>
+              </a>
+            </div>
+          </td>
+        </tr>
+        @endforeach
+      </tbody>
+    </table>
+  </div>
+  <div class="flex justify-between">
+    <a href="" class="flex items-end">
+      <p>{{ __('phases.P1.1.techniques') }}</p>
+    </a>
+    <div class="flex gap-4">
+      <a href="/app/planning/requirement/new">
+        <x-button color="blue">
+          <p class="text-xl">{{ __('buttons.addNew') }}</p>
+          <i class="fas fa-plus"></i>
+        </x-button>
       </a>
-      <div class="flex justify-between w-1/5">
-        <a href="/app/planning/requirement/new">
-          <button class="flex items-center p-2 text-sm bg-blue-400 focus:outline-none transition duration-200 ease-in-out hover:bg-blue-600 focus:bg-theme-contrast">
-            <div class="flex-auto flex justify-evenly content-center">
-              <p class="text-center text-xl font-semibold">{{ __('buttons.addNew') }}</p>
-              <p class="inline-flex ml-2 items-center">
-                <i class="fas fa-plus fa-lg"></i>
-              </p>
-            </div>
-          </button>
-        </a>
-
-        <a href="">
-          <button class="flex items-center p-2 text-sm bg-green-300 focus:outline-none transition duration-200 ease-in-out hover:bg-green-600 focus:bg-theme-contrast">
-            <div class="flex-auto flex justify-evenly content-center">
-              <p class="text-center text-xl font-semibold">{{ __('buttons.continue') }}</p>
-              <p class="inline-flex ml-2 items-center">
-                <i class="fas fa-arrow-right fa-lg"></i>
-              </p>
-            </div>
-          </button>
-        </a>
-      </div>
+      <a href="">
+        <x-button color="green">
+          <p class="text-xl">{{ __('buttons.continue') }}</p>
+          <i class="fas fa-arrow-right "></i>
+        </x-button>
+      </a>
     </div>
   </div>
 </div>
-<script> 
-  function closeit(){ 
+<script>
+  function closeit(){
     document.getElementById('success').setAttribute("style", "display:none");
-  } 
+  }
   setTimeout("closeit", 3000);
 </script>
 </x-app>
