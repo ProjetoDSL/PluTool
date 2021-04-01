@@ -17,7 +17,7 @@
       {{-- Home page --}}
       @if ($title == 'Home' || $title == 'Login' || $title == 'Welcome')
       <div class="flex p-2 w-full">
-        <div class="flex flex-1 justify-center p-2 bg-theme-light">
+        <div class="flex flex-1 justify-center p-2 bg-theme-light text-white">
           {{ $slot }}
         </div>
       </div>
