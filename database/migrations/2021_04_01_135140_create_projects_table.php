@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateRequirementsTable extends Migration
+class CreateProjectsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,11 @@ class CreateRequirementsTable extends Migration
      */
     public function up()
     {
-        Schema::create('requirements', function (Blueprint $table) {
+        Schema::create('projects', function (Blueprint $table) {
             $table->id();
+            $table->string('title');
             $table->string('description');
-            $table->string('contObrigations')->nullable();
-            $table->string('cltExpectations')->nullable();
-            $table->foreignId('project_id')->constrained('projects');
+            $table->string('objectives');
             $table->timestamps();
         });
     }
@@ -30,6 +29,6 @@ class CreateRequirementsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('requirements');
+        Schema::dropIfExists('projects');
     }
 }

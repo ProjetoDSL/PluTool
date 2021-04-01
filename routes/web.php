@@ -30,7 +30,7 @@ Route::get('/app', function () {
   return view('home');
 });
 
-Route::get('/app/{phase}/', [PhaseController::class, 'show']);
+Route::get('/app/{project}/{phase}/', [PhaseController::class, 'show']);
 
 Route::post('/app/{phase}/requirement/new', [RequirementController::class, 'create']);
 
@@ -44,7 +44,7 @@ Route::get('/app/{phase}/requirement/update/{id}', [RequirementController::class
 
 Route::get('/app/{phase}/requirement/view/{id}', [RequirementController::class, 'view']);
 
-Route::get('/app/{phase}/{task}', [TaskController::class, 'show']);
+Route::get('/app/{project}/{phase}/{task}', [TaskController::class, 'show']);
 
 
 

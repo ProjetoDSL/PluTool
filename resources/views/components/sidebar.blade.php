@@ -6,7 +6,7 @@
     </div>
     <div class="flex justify-between pr-2 pl-3">
       <div class="flex">
-        {{-- <p> {{Auth::user()->name}} </p> --}}
+        <p> {{Auth::user()->name}} </p>
       </div>
       <div class="flex-none text-bottom">
         <form method="POST" action="{{ route('logout') }}">
@@ -22,6 +22,17 @@
     </div>
   </div>
   <div>
+    <div class="flex justify-around items-center">
+      <a href="/app/projects" class="w-full">
+        <button class="flex items-center p-2 cursor-pointer transition duration-200 ease-in-out hover:bg-theme-hover active:bg-theme-contrast gap-4 justify-start w-full">
+          <p class="w-6">
+            <i class="fas fa-cross"></i>
+          </p>
+          <p>Projects</p>
+        </button>
+      </a>
+    </div>
+    
     @foreach ($activities as $phase => $tasks)
       <div class="flex justify-around items-center">
         <a href="/app/{{$phase}}" class="w-5/6">
