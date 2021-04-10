@@ -41,9 +41,6 @@ RUN a2enmod rewrite
 RUN a2enmod proxy_html
 COPY ./VirtualHost.conf /etc/apache2/sites-available/000-default.conf
 
-RUN addgroup --gid 1024 plutool
-RUN usermod -aG plutool root
-
 # Volume
 RUN mkdir /var/www/html/plutool
 VOLUME ["/var/www/html/plutool"]
