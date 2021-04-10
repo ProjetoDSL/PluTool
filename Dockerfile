@@ -49,6 +49,3 @@ RUN mkdir /var/www/html/plutool
 VOLUME ["/var/www/html/plutool"]
 WORKDIR /var/www/html/plutool
 COPY . .
-RUN chown :1024 -R .
-RUN chmod 775 -R .
-RUN chmod g+s -R .
