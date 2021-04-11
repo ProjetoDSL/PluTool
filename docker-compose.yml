@@ -17,17 +17,16 @@ services:
             - '.:/var/www/html'
         networks:
             - sail
+        command: >
+            bash -c "composer install &&
+            composer update &&
+            composer dumpautoload &&
+            php artisan migrate &&
+            php artisan db:seed &&
+            npm install && php artisan serve --host=0.0.0.0 --port=80"
         depends_on:
             - mysql
-            # - pgsql
             - redis
-            # - selenium
-    # selenium:
-    #     image: 'selenium/standalone-chrome'
-    #     volumes:
-    #         - '/dev/shm:/dev/shm'
-    #     networks:
-    #         - sail
     mysql:
         image: 'mysql:8.0'
         ports:
@@ -44,19 +43,6 @@ services:
             - sail
         healthcheck:
           test: ["CMD", "mysqladmin", "ping"]
-#    pgsql:
-#        image: postgres:13
-#        ports:
-#            - '${FORWARD_DB_PORT:-5432}:5432'
-#        environment:
-#            PGPASSWORD: '${DB_PASSWORD:-secret}'
-#            POSTGRES_DB: '${DB_DATABASE}'
-#            POSTGRES_USER: '${DB_USERNAME}'
-#            POSTGRES_PASSWORD: '${DB_PASSWORD:-secret}'
-#        volumes:
-#            - 'sailpostgresql:/var/lib/postgresql/data'
-#        networks:
-#            - sail
     redis:
         image: 'redis:alpine'
         ports:
@@ -67,12 +53,6 @@ services:
             - sail
         healthcheck:
           test: ["CMD", "redis-cli", "ping"]
-    # memcached:
-    #     image: 'memcached:alpine'
-    #     ports:
-    #         - '11211:11211'
-    #     networks:
-    #         - sail
     mailhog:
         image: 'mailhog/mailhog:latest'
         ports:
@@ -86,7 +66,5 @@ networks:
 volumes:
     sailmysql:
         driver: local
-#    sailpostgresql:
-#        driver: local
     sailredis:
         driver: local
