@@ -22,7 +22,6 @@ class UserSeeder extends Seeder
                 'name' => 'Administrador',
                 'email' => $email,
                 'password' => Hash::make('123mudar*'),
-                'active' => true
             ]);
         }
     }
