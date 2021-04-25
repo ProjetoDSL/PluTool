@@ -25,6 +25,9 @@
             <p>|</p>
           </div>
       </div>
+      @foreach ($projects as $proj)
+        <p>{{$proj['title']}}</p>
+      @endforeach
       <div class="font-bold row-span-6 h-full rounded-lg text-xl font-qsand py-2 px-4 text-white w-3/4 bg-gray-800">
         @for($id = 0; $id <5;$id++)
         <div class="flex bg-gray-700 rounded-lg h-12 mb-2">

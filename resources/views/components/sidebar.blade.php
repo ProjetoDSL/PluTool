@@ -23,10 +23,10 @@
   </div>
   <div>
     <div class="flex justify-around items-center">
-      <a href="/app/projects" class="w-full">
+      <a href="/app" class="w-full">
         <button class="flex items-center p-2 cursor-pointer transition duration-200 ease-in-out hover:bg-theme-hover active:bg-theme-contrast gap-4 justify-start w-full">
           <p class="w-6">
-            <i class="fas fa-cross"></i>
+            <i class="fas fa-clipboard"></i>
           </p>
           <p>Projects</p>
         </button>

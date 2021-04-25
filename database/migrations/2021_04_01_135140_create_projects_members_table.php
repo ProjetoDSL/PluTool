@@ -16,6 +16,7 @@ class CreateProjectsMembersTable extends Migration
         Schema::create('projects_members', function (Blueprint $table) {
             $table->foreignId('project_id')->constrained('projects');
             $table->foreignId('user_id')->constrained('users');
+            $table->integer('permission');
             $table->timestamps();
         });
     }

@@ -3,19 +3,19 @@
 namespace App\ViewComposers;
 
 use Illuminate\View\View;
-use App\Models\Requirement;
+use App\Models\Project;
 
 
-class ElicitateComposer {
+class ProjectComposer {
   public function __construct()
   {
-    $this->requirements = Requirement::all();
+    $this->projects = Project::all();
   }
 
   public function compose(View $view)
   {
     $view->with([
-      'requirements' => $this->requirements,
+      'projects' => $this->projects,
     ]);
   }
 }
