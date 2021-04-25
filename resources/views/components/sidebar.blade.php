@@ -68,15 +68,18 @@
 
     var navOpen = 1;
     $("#navSquash").on("click", function() {
+      var s = $("#sidebar");
       if(navOpen) {
-        $("#sidebar").animate({
+        s.animate({
           width: 0,
         }, 200)
+        s.toggleClass('pr-2');
         navOpen = 0;
       } else {
-        $("#sidebar").animate({
+        s.animate({
           width: "16rem",
         }, 200)
+        s.toggleClass('pr-2');
         navOpen = 1;
       }
     });
