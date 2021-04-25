@@ -1,7 +1,7 @@
 <x-auth-card>
     <!-- Validation Errors -->
     <x-auth-validation-errors :errors="$errors" />
-    <form method="POST" action="{{ route('register') }}">
+    <form method="POST" action="{{url('/login')}}">
         @csrf
         <!-- Name -->
         <div>

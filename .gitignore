@@ -22,11 +22,4 @@ Homestead.json
 /.vagrant
 .phpunit.result.cache
 
-public/css
-public/fonts
-public/js
-public/images/vendor
-
-.prettierrc
-
 plutool.tar.gz

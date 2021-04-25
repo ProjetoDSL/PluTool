@@ -8,22 +8,21 @@ use Illuminate\Support\Facades\Hash;
 
 class UserSeeder extends Seeder
 {
-    /**
-     * Run the database seeders.
-     *
-     * @return void
-     */
-    public function run()
-    {
-        $email = 'plutooladmin@lesse.com.br';
-        $user = DB::table('users')->where('email', '=', $email)->first();
-        if (empty($user)) {
-            DB::table('users')->insert([
-                'name' => 'Administrador',
-                'email' => $email,
-                'password' => Hash::make('123mudar*'),
-                'active' => true
-            ]);
-        }
+  /**
+   * Run the database seeders.
+   *
+   * @return void
+   */
+  public function run()
+  {
+    $email = 'plutooladmin@lesse.com.br';
+    $user = DB::table('users')->where('email', '=', $email)->first();
+    if (empty($user)) {
+      DB::table('users')->insert([
+        'name' => 'Administrador',
+        'email' => $email,
+        'password' => Hash::make('123mudar*')
+      ]);
     }
+  }
 }
