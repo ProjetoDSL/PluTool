@@ -10,7 +10,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300&display=swap" rel="stylesheet">
 
     <title>{{ config('app.name').' | '. ucfirst($title) ?? config('app.name')}}</title>
-
+    <script src="{{ asset('js/app.js') }}"></script>
   </head>
   <body>
     <div class="flex w-screen h-screen font-qsand text-lg bg-theme-primary">

@@ -8,7 +8,6 @@ services:
         working_dir: /var/www/html/tools/plutool
         ports:
             - '8000:80'
-            - '3000:3000'
         extra_hosts:
             - "plutool:127.0.0.1"
         networks:
@@ -34,8 +33,8 @@ services:
         ports:
             - '${FORWARD_DB_PORT:-3306}:3306'
         environment:
-            MYSQL_ROOT_PASSWORD: '${DB_PASSWORD}'
-            MYSQL_DATABASE: '${DB_DATABASE}'
+            MYSQL_ROOT_PASSWORD: 'plutool'
+            MYSQL_DATABASE: 'plutool'
             MYSQL_USER: '${DB_USERNAME}'
             MYSQL_PASSWORD: '${DB_PASSWORD}'
         volumes:

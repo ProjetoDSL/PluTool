@@ -57,7 +57,6 @@
     </button>
   </div>
 </div>
-<script src="{{ asset('js/app.js') }}"></script>
 <script>
   $(function() {
     $(".sidebarActivityExpand").on("click", function() {
