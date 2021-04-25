@@ -2,9 +2,9 @@
   <x-slot name="title">
     Home
   </x-slot>
-  <div class="flex flex-col">
-    <section class="max-w-6xl 2xl:max-w-7xl">
-      <h1>Para começar, escolha uma fase.</h1>
+  <div>
+    <section class="max-w-6xl 2xl:max-w-7xl flex flex-col justify-items-center items-center gap-4">
+      <h1 class="text-2xl">Para começar, escolha uma <b>fase</b> ou <b>atividade</b>.</h1>
       <img id="fluxo" max-height="100%" max-width="100%" src="{{ asset('storage/images/fluxo.svg') }}" usemap="#map-large">
       <map name="map-small">
         <area href="{{ url()->current().'/planning/p1-1'}}" coords="37.23931034482759,41.78068965517241,145.32413793103447,115.35103448275862" shape="rect">
