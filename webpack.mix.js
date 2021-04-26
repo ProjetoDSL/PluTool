@@ -12,10 +12,11 @@ const mix = require('laravel-mix');
 */
 
 mix.js('resources/js/app.js', 'public/js')
+  .js('node_modules/@fortawesome/fontawesome-free/js/solid.js', 'public/js/app.js')
+  .js('node_modules/@fortawesome/fontawesome-free/js/fontawesome.js', 'public/js/app.js')
   .postCss('resources/css/app.css', 'public/css', [
-    require('tailwindcss')
+    require('tailwindcss'),
   ])
-  .sass('resources/scss/fa.scss', 'public/css')
 
 mix.browserSync({
   proxy: 'localhost:8000',
