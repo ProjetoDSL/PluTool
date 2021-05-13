@@ -15,14 +15,12 @@ class UserSeeder extends Seeder
    */
   public function run()
   {
-    $email = 'plutooladmin@lesse.com.br';
-    $user = DB::table('users')->where('email', '=', $email)->first();
-    if (empty($user)) {
-      DB::table('users')->insert([
-        'name' => 'Administrador',
-        'email' => $email,
-        'password' => Hash::make('123mudar*')
-      ]);
-    }
+    DB::table('users')->insert(
+      [
+        ['name' => 'Administrador','email' => 'plutool@lesse.com.br','password' => Hash::make('123mudar*')],
+        ['name' => 'Igor','email'=> 'igordalepiane@gmail.com', 'password'=> '12345678','created_at' => now()],
+        ['name' => 'Lucas','email'=> 'lucas@gmail.com', 'password'=> '12345678','created_at' => now()],
+      ]
+    );
   }
 }

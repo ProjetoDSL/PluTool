@@ -19,6 +19,8 @@ class CreateRequirementsTable extends Migration
             $table->string('contObrigations')->nullable();
             $table->string('cltExpectations')->nullable();
             $table->timestamps();
+
+            $table->foreignId('project_id')->constrained('projects');
         });
     }
 

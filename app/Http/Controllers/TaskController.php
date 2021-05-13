@@ -8,7 +8,7 @@ use App\Models\Task;
 
 class TaskController extends Controller
 {
-    public function show(string $phase, string $task)
+    public function show(int $projectId,string $phase, string $task)
     {
       $phase = Phase::where('description', $phase)->firstOrFail();
       $task = Task::where('title', strtoupper(str_replace("-", ".", $task)))
